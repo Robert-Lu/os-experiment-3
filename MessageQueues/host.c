@@ -42,10 +42,10 @@ int main(int argc, char const *argv[])
     // get a random number.
     number = get_random_number();
 
-    // Create unique key via call to ftok()
+    // create unique key via call to ftok()
     key = ftok(".", 'g');
 
-    // Open the queue, create if necessary
+    // open the queue, create if necessary
     if((qid = msgget(key, IPC_CREAT|0660)) == -1) 
     {
         fprintf(stderr, "fail to open or create queue.");
@@ -81,6 +81,7 @@ int main(int argc, char const *argv[])
             else
                 strcpy(msg, "Too Small.");
         }
+
         printf("[GUEST]: guess = %d\n", guess);
         printf("Response is: %s\n", msg);
 
@@ -97,6 +98,7 @@ int main(int argc, char const *argv[])
         if (success)
             break;
     }
+    msgctl(qid, IPC_RMID, 0);
 
     printf("\nEnd Of Session.\n\n");
     return 0;

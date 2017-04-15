@@ -13,9 +13,64 @@
 
 #### 使用方法：
 
-使用两个终端，都保持工作目录在MessageQueue子文件夹下，先运行host，
+使用两个终端，都保持工作目录在MessageQueues子文件夹下，先运行host，
 再运行guest，host会产生一个1-10的随机数供猜测，
 在guest中输入猜测即可进行猜测，
-每一次猜测会获得反馈，如："Too Big."、"Too Small."。
+每一次猜测会获得反馈，如：`"Too Big."`、`"Too Small."`。
 猜测正确后，host与guest都会在输出提示后结束。
 
+#### Examples
+
+```
+$./host 
+I have chosen a random number between 1 and 10, (both included)
+
+I can tell you here that it is 2.
+
+Waiting for a guess.
+(Reading a message ...)
+[GUEST]: guess = 8
+Response is: Too Big.
+(Sending the message ...)
+
+Waiting for a guess.
+(Reading a message ...)
+[GUEST]: guess = 1
+Response is: Too Small.
+(Sending the message ...)
+
+Waiting for a guess.
+(Reading a message ...)
+[GUEST]: guess = 2
+Response is: You are right.
+(Sending the message ...)
+
+End Of Session.
+```
+
+At the same time:
+
+```
+./guest 
+The host have chosen a random number between 1 and 10, (both included)
+
+Input number to guess it:	88
+The range of the number is from 1 to 10, (both included)
+
+Input number to guess it:	8
+(Sending the message ...)
+(Reading a message ...)
+[HOST]: Too Big.
+
+Input number to guess it:	1
+(Sending the message ...)
+(Reading a message ...)
+[HOST]: Too Small.
+
+Input number to guess it:	2
+(Sending the message ...)
+(Reading a message ...)
+[HOST]: You are right.
+
+End Of Session.
+```

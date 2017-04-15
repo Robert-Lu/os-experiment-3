@@ -52,7 +52,7 @@ int main(int argc, char const *argv[])
     // main loop.
     while (1)
     {
-        // reading a number.
+        // reading a number from stdin.
         printf("\nInput number to guess it:\t");
         scanf("%d", &number);
         if (number < NUMBER_LOWER_BOUND || number > NUMBER_UPPER_BOUND)
