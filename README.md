@@ -24,7 +24,7 @@
 #### Examples
 
 ```
-$./host 
+$ ./host 
 I have chosen a random number between 1 and 10, (both included)
 
 I can tell you here that it is 2.
@@ -53,7 +53,7 @@ End Of Session.
 同时:
 
 ```
-./guest 
+$ ./guest 
 The host have chosen a random number between 1 and 10, (both included)
 
 Input number to guess it:	88
@@ -140,5 +140,9 @@ find [input_file_name] [target_number]
 #### Example:
 
 ```
-
+$ ./find numbers.txt 42
+Child Process:
+	Not Found.
+Parent Process:
+	Found at No. 51170
 ```
