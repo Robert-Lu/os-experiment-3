@@ -104,7 +104,7 @@ merge [input_file_1] [input_file_2]
 按以下方式调用
 
 ```
-./merge A.txt B.txt
+$ ./merge A.txt B.txt
 ```
 
 若 A.txt 中有 `1 3 5 7 9`，而 B.txt 中有 `2 4 6 8 10`。
