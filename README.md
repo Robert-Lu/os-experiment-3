@@ -114,3 +114,31 @@ merge [input_file_1] [input_file_2]
 ```
 1 2 3 4 5 6 7 8 9 10
 ```
+
+## Shared Momery
+
+在这一部分中，我使用 Shared Momery 方法实现了一个程序使得：创建两个进程，在指定的文件中找到一个指定的数字，
+两个进程分别负责查找一半的数字。
+
+#### 编译方法：
+
+在 SharedMomery 子文件夹中使用`make`命令，该目录下存有 MakeFile。
+编译后将有可执行文件： find
+
+使用  `make test` 来快速进行编译和测试，编译后会自动调用`./find numbers.txt 42`，其中的文件也在同目录中。
+
+使用  `make clean` 来清除生成的可执行文件。
+
+#### 使用方法：
+
+Usage:
+```
+find [input_file_name] [target_number]
+```
+要求输入文件包含数字（不超过65536个，若要更多数字，可以更改源文件的宏定义），用空白分隔符(space, tag, new line)间隔。
+
+#### Example:
+
+```
+
+```
