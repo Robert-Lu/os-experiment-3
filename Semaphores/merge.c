@@ -50,7 +50,7 @@ int main(int argc, char const *argv[])
     pid_t childpid;
     if((childpid = fork()) < 0) // error occured
     {
-      perror("Fork Failed");
+      perror("fork failure.");
       exit(1);
     }
     else if(childpid == 0) // child process
