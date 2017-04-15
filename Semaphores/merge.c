@@ -1,3 +1,8 @@
+/********************************************************************
+ * File_Name: merge.c
+ * Description: This module merge two files and output.
+ ********************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -50,8 +55,8 @@ int main(int argc, char const *argv[])
     pid_t childpid;
     if((childpid = fork()) < 0) // error occured
     {
-      perror("fork failure.");
-      exit(1);
+        fprintf(stderr, "fork failure.");
+        exit(1);
     }
     else if(childpid == 0) // child process
     {

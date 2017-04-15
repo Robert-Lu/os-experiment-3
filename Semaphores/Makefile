@@ -5,4 +5,4 @@ test: sem odd.txt even.txt
 	./merge odd.txt even.txt
 
 clean:
-	rm bs
+	rm merge
